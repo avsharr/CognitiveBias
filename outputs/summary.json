@@ -1,0 +1,28 @@
+{
+  "hyperparameters": {
+    "random_state": 10,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "ci_alpha": 0.95
+  },
+  "data_lab": {
+    "test_acc_rf_human": 0.7132575757575758,
+    "test_acc_rf_normative": 1.0,
+    "cv_ci_human": "0.719 [0.713, 0.725]",
+    "cv_ci_normative": "1.000 [1.000, 1.000]",
+    "test_acc_lstm": 0.7261363636363637,
+    "test_acc_rnn": 0.718939393939394
+  },
+  "data_cons": {
+    "test_acc_rf": 0.8068181818181818,
+    "test_acc_lstm": 0.8015151515151515,
+    "test_acc_rnn": 0.8015151515151515,
+    "cv_ci": "0.794 [0.775, 0.813]"
+  },
+  "data_framing": {
+    "test_acc_rf": 0.8694444444444445,
+    "test_acc_lstm": 0.8694444444444445,
+    "test_acc_rnn": 0.8680555555555556,
+    "cv_ci": "0.864 [0.857, 0.872]"
+  }
+}

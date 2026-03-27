@@ -1,0 +1,119 @@
+{
+  "glmm": {
+    "params": {
+      "Intercept": 7.071275077307527,
+      "Evidence_Strength": -0.37656640668610036,
+      "complexity": -0.4601346327930827,
+      "EvStr_x_Complexity": -0.01844674601320318
+    },
+    "pvalues": {
+      "Intercept": 2.5616431015769784e-07,
+      "Evidence_Strength": 3.348145601161567e-05,
+      "complexity": 2.6754163541628723e-07,
+      "EvStr_x_Complexity": 0.00019923926015767544
+    }
+  },
+  "psychometric_easy": {
+    "k": 0.12724699754111965,
+    "x0": 0.985345236446282
+  },
+  "psychometric_hard": {
+    "k": 0.038677736285245526,
+    "x0": 0.21003612611821929
+  },
+  "leaky_integrator": {
+    "leak": 0.95,
+    "accuracy": 0.6859090909090909
+  },
+  "cluster_interpretations": [
+    {
+      "cluster": 0,
+      "n": 3069,
+      "mean_EV_diff": 9.994623655913978,
+      "mean_complexity": 5.363749981183171,
+      "mean_residual": -0.24692966533197022,
+      "error_rate": 0.24144672531769307,
+      "avg_abs_residual": 0.24692966533197022,
+      "interpretation": "Evidence undervaluation / Counter-intuitive choice"
+    },
+    {
+      "cluster": 1,
+      "n": 3993,
+      "mean_EV_diff": -0.23760330578512398,
+      "mean_complexity": 15.038134527463747,
+      "mean_residual": 0.48145579223944057,
+      "error_rate": 0.47983971950914095,
+      "avg_abs_residual": 0.48145579223944057,
+      "interpretation": "Conservatism — ignoring strong evidence at high complexity"
+    },
+    {
+      "cluster": 2,
+      "n": 3531,
+      "mean_EV_diff": -9.955607476635514,
+      "mean_complexity": 5.428005085914392,
+      "mean_residual": 0.20440737749347937,
+      "error_rate": 0.19909374114981593,
+      "avg_abs_residual": 0.20440737749347937,
+      "interpretation": "Mixed pattern / Moderate deviation from normative"
+    },
+    {
+      "cluster": 3,
+      "n": 2607,
+      "mean_EV_diff": 0.30063291139240506,
+      "mean_complexity": 14.972837844634157,
+      "mean_residual": -0.4788285811337054,
+      "error_rate": 0.4748753356348293,
+      "avg_abs_residual": 0.4788285811337054,
+      "interpretation": "Conservatism — ignoring strong evidence at high complexity"
+    }
+  ],
+  "calibration": {
+    "by_bin": [
+      {
+        "accuracy": 0.8727272727272727,
+        "n": 1320,
+        "confidence": 0.4906060606060606,
+        "complexity_mean": 6.710825224557212
+      },
+      {
+        "accuracy": 0.8456883509833586,
+        "n": 1322,
+        "confidence": 0.4910741301059002,
+        "complexity_mean": 7.169922944714774
+      },
+      {
+        "accuracy": 0.7996965098634294,
+        "n": 1318,
+        "confidence": 0.464339908952959,
+        "complexity_mean": 8.827959353031824
+      },
+      {
+        "accuracy": 0.7300150829562594,
+        "n": 1326,
+        "confidence": 0.403921568627451,
+        "complexity_mean": 10.518552076893048
+      },
+      {
+        "accuracy": 0.7115677321156774,
+        "n": 1314,
+        "confidence": 0.3987823439878234,
+        "complexity_mean": 11.005020074834349
+      }
+    ],
+    "corr_complexity_accuracy": -0.165088067078758,
+    "corr_complexity_confidence": -0.13918293587692876,
+    "corr_confidence_accuracy": 0.23959530235468957,
+    "confidence_accuracy_gap_low_complexity": -0.3664242424242424,
+    "confidence_accuracy_gap_high_complexity": -0.31799999999999995,
+    "metacognitive_bias": 0.048424242424242425,
+    "paired_ttest": {
+      "t_statistic": 3.50965083538745,
+      "p_value": 0.001356817616083374,
+      "n_subjects": 33,
+      "mean_gap_easy": -0.36793353307087917,
+      "mean_gap_hard": -0.3178807857851036,
+      "mean_difference": 0.05005274728577558,
+      "significant": true
+    }
+  }
+}
