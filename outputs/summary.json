@@ -6,23 +6,365 @@
     "ci_alpha": 0.95
   },
   "data_lab": {
-    "test_acc_rf_human": 0.7132575757575758,
-    "test_acc_rf_normative": 1.0,
-    "cv_ci_human": "0.719 [0.713, 0.725]",
-    "cv_ci_normative": "1.000 [1.000, 1.000]",
-    "test_acc_lstm": 0.7261363636363637,
-    "test_acc_rnn": 0.718939393939394
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.6924242424242424,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7068181818181818,
+        "margin": 0.009401032177530936,
+        "low": 0.6974171496406508,
+        "high": 0.7162192139957128
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.7117424242424243,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7222537878787879,
+        "margin": 0.003956938279435376,
+        "low": 0.7182968495993526,
+        "high": 0.7262107261582232
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.722 [0.718, 0.726]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.7155303030303031,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7198863636363636,
+        "margin": 0.005739269592547271,
+        "low": 0.7141470940438164,
+        "high": 0.7256256332289108
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.7208333333333333,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7168560606060606,
+          0.7230113636363636,
+          0.7154356060606061,
+          0.7201704545454546,
+          0.7211174242424242
+        ],
+        "ci_95": {
+          "mean": 0.7193181818181819,
+          "margin": 0.003864132844649186,
+          "low": 0.7154540489735327,
+          "high": 0.723182314662831
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.7136363636363636,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7253787878787878,
+          0.7182765151515151,
+          0.7040719696969697,
+          0.7239583333333334,
+          0.7116477272727273
+        ],
+        "ci_95": {
+          "mean": 0.7166666666666666,
+          "margin": 0.011027018234203117,
+          "low": 0.7056396484324634,
+          "high": 0.7276936849008697
+        }
+      }
+    }
   },
   "data_cons": {
-    "test_acc_rf": 0.8068181818181818,
-    "test_acc_lstm": 0.8015151515151515,
-    "test_acc_rnn": 0.8015151515151515,
-    "cv_ci": "0.794 [0.775, 0.813]"
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.8128787878787879,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7977272727272728,
+        "margin": 0.016199002590695056,
+        "low": 0.7815282701365778,
+        "high": 0.8139262753179679
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.8090909090909091,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7960227272727273,
+        "margin": 0.024162992079515538,
+        "low": 0.7718597351932117,
+        "high": 0.8201857193522428
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.796 [0.772, 0.820]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.8015151515151515,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7935606060606061,
+        "margin": 0.014085300648250535,
+        "low": 0.7794753054123555,
+        "high": 0.8076459067088566
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.8007575757575758,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7831439393939394,
+          0.7897727272727273,
+          0.7888257575757576,
+          0.7964015151515151,
+          0.8134469696969697
+        ],
+        "ci_95": {
+          "mean": 0.7943181818181818,
+          "margin": 0.014505994118572015,
+          "low": 0.7798121876996098,
+          "high": 0.8088241759367538
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.7977272727272727,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7746212121212122,
+          0.78125,
+          0.8001893939393939,
+          0.7945075757575758,
+          0.8134469696969697
+        ],
+        "ci_95": {
+          "mean": 0.7928030303030302,
+          "margin": 0.01911201939486741,
+          "low": 0.7736910109081628,
+          "high": 0.8119150496978976
+        }
+      }
+    }
   },
   "data_framing": {
-    "test_acc_rf": 0.8694444444444445,
-    "test_acc_lstm": 0.8694444444444445,
-    "test_acc_rnn": 0.8680555555555556,
-    "cv_ci": "0.864 [0.857, 0.872]"
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.8694444444444445,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.865625,
+        "margin": 0.006918313181161302,
+        "low": 0.8587066868188387,
+        "high": 0.8725433131811613
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.8694444444444445,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.8645833333333333,
+        "margin": 0.008622666654192784,
+        "low": 0.8559606666791405,
+        "high": 0.873205999987526
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.865 [0.856, 0.873]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.8708333333333333,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.8645833333333333,
+        "margin": 0.008888041347432011,
+        "low": 0.8556952919859012,
+        "high": 0.8734713746807653
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.8680555555555556,
+      "cv_on_train": {
+        "fold_scores": [
+          0.8715277777777778,
+          0.8489583333333334,
+          0.8611111111111112,
+          0.859375,
+          0.8645833333333334
+        ],
+        "ci_95": {
+          "mean": 0.861111111111111,
+          "margin": 0.010225224799362267,
+          "low": 0.8508858863117488,
+          "high": 0.8713363359104733
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.8694444444444445,
+      "cv_on_train": {
+        "fold_scores": [
+          0.8732638888888888,
+          0.8611111111111112,
+          0.8628472222222222,
+          0.8489583333333334,
+          0.8263888888888888
+        ],
+        "ci_95": {
+          "mean": 0.8545138888888889,
+          "margin": 0.022267107988114113,
+          "low": 0.8322467809007748,
+          "high": 0.8767809968770031
+        }
+      }
+    }
+  },
+  "combined": {
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.7517094017094017,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.757051282051282,
+        "margin": 0.012960758691692411,
+        "low": 0.7440905233595896,
+        "high": 0.7700120407429745
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.7628205128205128,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7663461538461538,
+        "margin": 0.0065929034676741405,
+        "low": 0.7597532503784796,
+        "high": 0.772939057313828
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.766 [0.760, 0.773]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.7621794871794871,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7681089743589743,
+        "margin": 0.006838563388692836,
+        "low": 0.7612704109702815,
+        "high": 0.7749475377476671
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.7632478632478632,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7652243589743589,
+          0.7652243589743589,
+          0.7585470085470085,
+          0.7540064102564102,
+          0.7681623931623932
+        ],
+        "ci_95": {
+          "mean": 0.7622329059829059,
+          "margin": 0.007195158214841776,
+          "low": 0.7550377477680642,
+          "high": 0.7694280641977477
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.7636752136752136,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7681623931623932,
+          0.7649572649572649,
+          0.7542735042735043,
+          0.7553418803418803,
+          0.7662927350427351
+        ],
+        "ci_95": {
+          "mean": 0.7618055555555555,
+          "margin": 0.008070537326557754,
+          "low": 0.7537350182289978,
+          "high": 0.7698760928821132
+        }
+      }
+    },
+    "random_forest_combined_note": "Random Forest on unified tabular features (sequences + EV_diff + complexity + pair_* + source one-hot).",
+    "n_rows": 23400,
+    "rows_by_source": {
+      "lab": 13200,
+      "cons": 6600,
+      "framing": 3600
+    },
+    "unified_stats_csv_relative": "datasets/unified_dataset.csv",
+    "unified_stats_note": "Статистики последовательностей: python -m scripts.merge_data",
+    "unified_csv_preprocessing_relative": "preprocessing/combined/unified_dataset.csv"
   }
 }

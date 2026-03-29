@@ -28,43 +28,43 @@
   "cluster_interpretations": [
     {
       "cluster": 0,
-      "n": 3069,
-      "mean_EV_diff": 9.994623655913978,
-      "mean_complexity": 5.363749981183171,
-      "mean_residual": -0.24692966533197022,
-      "error_rate": 0.24144672531769307,
-      "avg_abs_residual": 0.24692966533197022,
-      "interpretation": "Evidence undervaluation / Counter-intuitive choice"
+      "n": 4983,
+      "mean_EV_diff": 0.6216887417218543,
+      "mean_complexity": 13.729340961725493,
+      "mean_residual": 0.06237947977661084,
+      "error_rate": 0.4483243026289384,
+      "avg_abs_residual": 0.4638441639217623,
+      "interpretation": "Conservatism — ignoring strong evidence at high complexity"
     },
     {
       "cluster": 1,
-      "n": 3993,
-      "mean_EV_diff": -0.23760330578512398,
-      "mean_complexity": 15.038134527463747,
-      "mean_residual": 0.48145579223944057,
-      "error_rate": 0.47983971950914095,
-      "avg_abs_residual": 0.48145579223944057,
-      "interpretation": "Conservatism — ignoring strong evidence at high complexity"
-    },
-    {
-      "cluster": 2,
-      "n": 3531,
-      "mean_EV_diff": -9.955607476635514,
-      "mean_complexity": 5.428005085914392,
-      "mean_residual": 0.20440737749347937,
-      "error_rate": 0.19909374114981593,
-      "avg_abs_residual": 0.20440737749347937,
+      "n": 2805,
+      "mean_EV_diff": -9.023529411764706,
+      "mean_complexity": 6.342358760090052,
+      "mean_residual": 0.1955365762945993,
+      "error_rate": 0.22067736185383247,
+      "avg_abs_residual": 0.24547417620504036,
       "interpretation": "Mixed pattern / Moderate deviation from normative"
     },
     {
-      "cluster": 3,
-      "n": 2607,
-      "mean_EV_diff": 0.30063291139240506,
-      "mean_complexity": 14.972837844634157,
-      "mean_residual": -0.4788285811337054,
-      "error_rate": 0.4748753356348293,
-      "avg_abs_residual": 0.4788285811337054,
+      "cluster": 2,
+      "n": 3036,
+      "mean_EV_diff": -1.9565217391304348,
+      "mean_complexity": 11.687499813115187,
+      "mean_residual": 0.14437934772326927,
+      "error_rate": 0.37944664031620556,
+      "avg_abs_residual": 0.398870044795114,
       "interpretation": "Conservatism — ignoring strong evidence at high complexity"
+    },
+    {
+      "cluster": 3,
+      "n": 2376,
+      "mean_EV_diff": 9.894097222222221,
+      "mean_complexity": 5.48073329662896,
+      "mean_residual": -0.27233532019783435,
+      "error_rate": 0.24957912457912457,
+      "avg_abs_residual": 0.27233532019783435,
+      "interpretation": "Evidence undervaluation / Counter-intuitive choice"
     }
   ],
   "calibration": {

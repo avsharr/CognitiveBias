@@ -1,0 +1,103 @@
+{
+  "dataset": "data_lab",
+  "hyperparameters": {
+    "random_state": 10,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "ci_alpha": 0.95
+  },
+  "artifact_locations": {
+    "preprocessing": "preprocessing/data_lab/",
+    "models": "models/data_lab/",
+    "figures": "figures/data_lab/",
+    "outputs": "outputs/separate_analysis/data_lab/"
+  },
+  "models": {
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.6924242424242424,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7068181818181818,
+        "margin": 0.009401032177530936,
+        "low": 0.6974171496406508,
+        "high": 0.7162192139957128
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.7117424242424243,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7222537878787879,
+        "margin": 0.003956938279435376,
+        "low": 0.7182968495993526,
+        "high": 0.7262107261582232
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.722 [0.718, 0.726]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.7155303030303031,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7198863636363636,
+        "margin": 0.005739269592547271,
+        "low": 0.7141470940438164,
+        "high": 0.7256256332289108
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.7208333333333333,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7168560606060606,
+          0.7230113636363636,
+          0.7154356060606061,
+          0.7201704545454546,
+          0.7211174242424242
+        ],
+        "ci_95": {
+          "mean": 0.7193181818181819,
+          "margin": 0.003864132844649186,
+          "low": 0.7154540489735327,
+          "high": 0.723182314662831
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.7136363636363636,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7253787878787878,
+          0.7182765151515151,
+          0.7040719696969697,
+          0.7239583333333334,
+          0.7116477272727273
+        ],
+        "ci_95": {
+          "mean": 0.7166666666666666,
+          "margin": 0.011027018234203117,
+          "low": 0.7056396484324634,
+          "high": 0.7276936849008697
+        }
+      }
+    }
+  }
+}

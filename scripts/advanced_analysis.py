@@ -10,6 +10,13 @@ from scipy import stats
 import os
 import json
 
+from .paths import (
+    ADVANCED_ANALYSIS_JSON,
+    FIG_CONS,
+    FIG_LAB,
+    OUT_ADVANCED,
+    OUTPUTS_DIR,
+)
 
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
@@ -162,8 +169,8 @@ def interpret_clusters(df, labels, residuals, ev_col='EV_diff', complexity_col='
         mean_complexity = sub[complexity_col].mean()
         mean_resid = sub['residual'].mean()
         err_rate = 1 - sub[correct_col].mean()
-        # proportion of "left overestimation": residual > 0 when normative=0, or residual < 0 when normative=1
-        # simplification: |residual| shows magnitude of deviation from normative
+        # proportion of "left overestimation": residual > 0 when EV-optimal is right, etc.
+        # |residual| — отклонение вероятности «лево» от EV-оптимального выбора
         avg_abs_resid = np.abs(sub['residual']).mean()
 
         # heuristic for interpretation
@@ -176,7 +183,7 @@ def interpret_clusters(df, labels, residuals, ev_col='EV_diff', complexity_col='
         elif mean_ev > 0 and mean_resid < -0.05:
             bias_type = "Evidence undervaluation / Counter-intuitive choice"
         else:
-            bias_type = "Mixed pattern / Moderate deviation from normative"
+            bias_type = "Mixed pattern / Moderate deviation from EV-optimal"
 
         interpretations.append({
             'cluster': int(c),
@@ -336,11 +343,13 @@ def plot_calibration_by_complexity(df, complexity_col='complexity', correct_col=
 # main
 
 def main():
-    base = os.path.dirname(os.path.abspath(__file__))
-    os.makedirs(os.path.join(base, 'outputs'), exist_ok=True)
+    os.makedirs(OUTPUTS_DIR, exist_ok=True)
+    os.makedirs(OUT_ADVANCED, exist_ok=True)
+    os.makedirs(FIG_LAB, exist_ok=True)
+    os.makedirs(FIG_CONS, exist_ok=True)
 
     # import main pipeline for data
-    from evidence_integration_analysis import (
+    from .evidence_integration_analysis import (
         load_data, preprocess_data_lab, preprocess_data_cons,
         build_features_lab, run_random_forest,
         compute_residuals, cluster_residuals,
@@ -360,10 +369,10 @@ def main():
     train_idx, test_idx = train_test_split(
         np.arange(len(X_lab)), test_size=0.2, stratify=y_h, random_state=42
     )
-    rf_res = run_random_forest(X_lab, y_h, df_lab['normative_choice'], train_idx, test_idx, cv=5)
+    rf_res = run_random_forest(X_lab, y_h, train_idx, test_idx, cv=5)
 
     scaler = rf_res['scaler']
-    residuals = compute_residuals(rf_res['rf_human'], X_lab, y_h, df_lab['normative_choice'], scaler)
+    residuals = compute_residuals(rf_res['rf_human'], X_lab, scaler, df_lab['normative_choice'])
     X_s = scaler.transform(X_lab)
     labels, _ = cluster_residuals(residuals, X_s, n_clusters=4)
 
@@ -387,9 +396,9 @@ def main():
     # psychometric function
     print("\nPsychometric function (Easy vs Hard)")
     plot_psychometric_easy_hard(
-        df_lab, save_path=os.path.join(base, 'outputs', 'psychometric_easy_hard.png')
+        df_lab, save_path=os.path.join(FIG_LAB, 'psychometric_easy_hard.png')
     )
-    print("Saved: outputs/psychometric_easy_hard.png")
+    print(f"Saved: {os.path.join(FIG_LAB, 'psychometric_easy_hard.png')}")
 
     median_c = df_lab['complexity'].median()
     easy = df_lab[df_lab['complexity'] <= median_c]
@@ -457,11 +466,10 @@ def main():
         plot_calibration_by_complexity(
             df_cons, complexity_col='complexity', correct_col='is_correct',
             confidence_col='confidence', n_bins=5,
-            save_path=os.path.join(base, 'outputs', 'calibration_confidence_vs_accuracy.png')
+            save_path=os.path.join(FIG_CONS, 'calibration_confidence_vs_accuracy.png')
         )
 
-    # save results
-    out_path = os.path.join(base, 'outputs', 'advanced_analysis_results.json')
+    out_path = ADVANCED_ANALYSIS_JSON
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"\nResults saved: {out_path}")

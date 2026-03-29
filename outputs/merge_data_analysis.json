@@ -1,0 +1,76 @@
+{
+  "n_rows": 23400,
+  "point_biserial_response_left": {
+    "mean_left": {
+      "r_pointbiserial": 0.32062854961513143,
+      "p_value": 0.0
+    },
+    "mean_right": {
+      "r_pointbiserial": -0.30784678486864625,
+      "p_value": 0.0
+    },
+    "var_left": {
+      "r_pointbiserial": 0.15026571860130283,
+      "p_value": 3.16961283786524e-118
+    },
+    "var_right": {
+      "r_pointbiserial": -0.15300487628841608,
+      "p_value": 1.4900138773368055e-122
+    },
+    "diff_mean": {
+      "r_pointbiserial": 0.5096635444654714,
+      "p_value": 0.0
+    },
+    "mean_var": {
+      "r_pointbiserial": -9.310592301214546e-05,
+      "p_value": 0.9886371461843335
+    },
+    "diff_var": {
+      "r_pointbiserial": 0.15379345465692829,
+      "p_value": 8.168073474027322e-124
+    }
+  },
+  "logistic_standardized": {
+    "train_accuracy": 0.7580769230769231,
+    "roc_auc_train": 0.7970020180876385,
+    "cv_accuracy_mean": 0.7580769230769231,
+    "cv_accuracy_std": 0.05558421351578966,
+    "coefficients": {
+      "mean_left": 0.4455717017756559,
+      "mean_right": -0.4082808666331045,
+      "var_left": 0.1026596687159686,
+      "var_right": -0.10861399030291309,
+      "diff_mean": 0.6924011553592702,
+      "mean_var": -0.012132194069438263,
+      "diff_var": 0.10712198857879573
+    },
+    "intercept": -0.0934815322315079
+  },
+  "by_source": [
+    {
+      "source": "data_cons",
+      "n": 6600,
+      "p_choose_left": 0.49196969696969695,
+      "accuracy": 0.791969696969697,
+      "mean_diff_mean": 0.08136363636363636,
+      "mean_mean_var": 224.92719155844156
+    },
+    {
+      "source": "data_framing",
+      "n": 3600,
+      "p_choose_left": 0.4811111111111111,
+      "accuracy": 0.8661111111111112,
+      "mean_diff_mean": -0.19465277777777779,
+      "mean_mean_var": 224.42808531746033
+    },
+    {
+      "source": "data_lab",
+      "n": 13200,
+      "p_choose_left": 0.47848484848484846,
+      "accuracy": 0.6923484848484849,
+      "mean_diff_mean": -0.351875,
+      "mean_mean_var": 237.375625
+    }
+  ],
+  "output_csv": "/Users/anastasiia/Desktop/LABA2/datasets/unified_dataset.csv"
+}

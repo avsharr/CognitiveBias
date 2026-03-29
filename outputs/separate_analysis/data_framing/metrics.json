@@ -1,0 +1,103 @@
+{
+  "dataset": "data_framing",
+  "hyperparameters": {
+    "random_state": 10,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "ci_alpha": 0.95
+  },
+  "artifact_locations": {
+    "preprocessing": "preprocessing/data_framing/",
+    "models": "models/data_framing/",
+    "figures": "figures/data_framing/",
+    "outputs": "outputs/separate_analysis/data_framing/"
+  },
+  "models": {
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.8694444444444445,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.865625,
+        "margin": 0.006918313181161302,
+        "low": 0.8587066868188387,
+        "high": 0.8725433131811613
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.8694444444444445,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.8645833333333333,
+        "margin": 0.008622666654192784,
+        "low": 0.8559606666791405,
+        "high": 0.873205999987526
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.865 [0.856, 0.873]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.8708333333333333,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.8645833333333333,
+        "margin": 0.008888041347432011,
+        "low": 0.8556952919859012,
+        "high": 0.8734713746807653
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.8680555555555556,
+      "cv_on_train": {
+        "fold_scores": [
+          0.8715277777777778,
+          0.8489583333333334,
+          0.8611111111111112,
+          0.859375,
+          0.8645833333333334
+        ],
+        "ci_95": {
+          "mean": 0.861111111111111,
+          "margin": 0.010225224799362267,
+          "low": 0.8508858863117488,
+          "high": 0.8713363359104733
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.8694444444444445,
+      "cv_on_train": {
+        "fold_scores": [
+          0.8732638888888888,
+          0.8611111111111112,
+          0.8628472222222222,
+          0.8489583333333334,
+          0.8263888888888888
+        ],
+        "ci_95": {
+          "mean": 0.8545138888888889,
+          "margin": 0.022267107988114113,
+          "low": 0.8322467809007748,
+          "high": 0.8767809968770031
+        }
+      }
+    }
+  }
+}

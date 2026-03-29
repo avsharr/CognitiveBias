@@ -1,0 +1,115 @@
+{
+  "dataset": "combined",
+  "hyperparameters": {
+    "random_state": 10,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "ci_alpha": 0.95
+  },
+  "artifact_locations": {
+    "preprocessing": "preprocessing/combined/",
+    "models": "models/combined/",
+    "figures": "figures/combined/",
+    "outputs": "outputs/combined/"
+  },
+  "models": {
+    "logistic_regression_baseline": {
+      "test_acc_human": 0.7517094017094017,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.757051282051282,
+        "margin": 0.012960758691692411,
+        "low": 0.7440905233595896,
+        "high": 0.7700120407429745
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "random_forest": {
+      "test_acc_human": 0.7628205128205128,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7663461538461538,
+        "margin": 0.0065929034676741405,
+        "low": 0.7597532503784796,
+        "high": 0.772939057313828
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "cv_ci_human_str": "0.766 [0.760, 0.773]",
+      "cv_ci_normative_str": "1.000 [1.000, 1.000]"
+    },
+    "xgboost": {
+      "test_acc_human": 0.7621794871794871,
+      "test_acc_normative": 1.0,
+      "cv_ci_human": {
+        "mean": 0.7681089743589743,
+        "margin": 0.006838563388692836,
+        "low": 0.7612704109702815,
+        "high": 0.7749475377476671
+      },
+      "cv_ci_normative": {
+        "mean": 1.0,
+        "margin": 0.0,
+        "low": 1.0,
+        "high": 1.0
+      }
+    },
+    "lstm": {
+      "test_acc": 0.7632478632478632,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7652243589743589,
+          0.7652243589743589,
+          0.7585470085470085,
+          0.7540064102564102,
+          0.7681623931623932
+        ],
+        "ci_95": {
+          "mean": 0.7622329059829059,
+          "margin": 0.007195158214841776,
+          "low": 0.7550377477680642,
+          "high": 0.7694280641977477
+        }
+      }
+    },
+    "rnn": {
+      "test_acc": 0.7636752136752136,
+      "cv_on_train": {
+        "fold_scores": [
+          0.7681623931623932,
+          0.7649572649572649,
+          0.7542735042735043,
+          0.7553418803418803,
+          0.7662927350427351
+        ],
+        "ci_95": {
+          "mean": 0.7618055555555555,
+          "margin": 0.008070537326557754,
+          "low": 0.7537350182289978,
+          "high": 0.7698760928821132
+        }
+      }
+    }
+  },
+  "combined_meta": {
+    "random_forest_combined_note": "Random Forest on unified tabular features (sequences + EV_diff + complexity + pair_* + source one-hot).",
+    "n_rows": 23400,
+    "rows_by_source": {
+      "lab": 13200,
+      "cons": 6600,
+      "framing": 3600
+    },
+    "unified_stats_csv_relative": "datasets/unified_dataset.csv",
+    "unified_stats_note": "Статистики последовательностей: python -m scripts.merge_data",
+    "unified_csv_preprocessing_relative": "preprocessing/combined/unified_dataset.csv"
+  }
+}
